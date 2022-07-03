@@ -1,0 +1,166 @@
+/* geral */
+
+* {
+  margin: 0;
+  margin-top: 0px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+  color: #323232;
+  border: none;
+}
+
+h1 {
+  color: #228B22;
+}
+
+/*  */
+
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+a,
+label {
+  font-size: .8rem;
+}
+
+a:hover {
+  color: #228B22;
+}
+
+/*teste de cabeçalho*/
+.cabecalho {
+  margin-top: 0;
+  width: 100%;
+  float: left;
+}
+
+.logo {
+  background: url(../img/logo.png) left top;
+  background-size: 5%;
+  background-repeat: no-repeat;
+}
+
+
+/* container form */
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.box100 {
+  flex: 1 1 100%;
+  position: relative;
+}
+
+.box45 {
+  flex: 1 1 45%;
+  position: relative;
+}
+
+.box55 {
+  flex: 1 1 55%;
+  position: relative;
+}
+
+.box35 {
+  flex: 1 1 35%;
+  position: relative;
+}
+
+.espacamento {
+  margin-right: 2.5%;
+}
+
+label,
+input {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  border-bottom: 2px solid #228B22;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+input:focus {
+  border-bottom: 2px solid #228B22;
+  border-color: #323232;
+}
+
+input[type="submit"] {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  height: 40px;
+  border-radius: 20px;
+  margin-top: 30px;
+  color: #fff;
+  background-color: #228B22;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #006400;
+  transition: .5s;
+}
+
+#termos {
+  margin-right: 5px;
+}
+
+#termos,
+#termos-label {
+  display: inline-block;
+  width: auto;
+}
+
+
+/* cadastro container */
+
+#cadastro-container {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1px 30px;
+  margin-top: 20vh;
+  border-radius: 10px;
+  text-align: left;
+  border: 2px solid #228B22;
+}
+
+#cadastro {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#subtopico {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+/*validações*/
+
+.error-validation {
+  color: #ff1a1a;
+  position: absolute;
+  top: 57px;
+  font-size: .8rem;
+}
+
+.template {
+  display: none;
+}
