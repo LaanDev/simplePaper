@@ -1,24 +1,22 @@
-<?php
-
+<?php ?>
 //HTML da página de cadastro
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SimplePaper - Cadastro de Usuário</title>
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/fontawesome.min.css">
 
   <link rel="stylesheet" href="../css/style_cadastro.css">
 </head>
 
 <body>
   <header class="cabecalho">
-    <a href="index.html">
+    <a href="index.php">
       <h1 class="logo"> SimplePaper</h1>
     </a>
   </header>
@@ -61,7 +59,7 @@
       </div>
       <div class="box100">
         <input type="checkbox" name="termos" id="termos">
-        <label for="termos" id="termos-label">Eu li e aceito os <a href="termos.html">termos de uso</a></label>
+        <label for="termos" id="termos-label">Eu li e aceito os <a href="termos.php">termos de uso</a></label>
       </div>
       <input type="submit" id="btn-submit" value="Cadastrar">
 
@@ -74,39 +72,51 @@
 </body>
 
 </html>
-//Realizando a conex�o com o BD
-include_once ("conexao.php");
 
-//Buscando dados do formul�rio
-$nome = ;
-$cpf = ;
-$datanasc = ;
-$email = ;
-$senha = ;
-$confirmasenha = ;
-$rua = ;
-$numero = ;
+<?php
+//Realizando a conexão com o BD
+include "conexao.php";
 
-//Verificando se as senhas digitadas s�o iguais
-if($senha !== $confirmasenha){
-  <script>alert("Favor digitar a senha corretamente");</script> 
+
+
+//Salvando os dados do formulário em suas respectivas variáveis
+$nome = $dados['nome'];
+$cpf = $dados['cpf'];
+$datanasc = $dados['datanasc'];
+$email = $dados['email'];
+$senha = $dados['senha'];
+$confirmasenha = $dados['confirmasenha'];
+$rua = $dados['rua'];
+$numero = $dados['numero'];
+
+//Verificando se as senhas digitadas são iguais
+if ($senha !== $confirmasenha) {
+?>
+  <script>
+    alert("Favor digitar a senha corretamente");
+  </script>
+<?php
   return false;
-}else{
+} else {
   return true;
 }
 
 //INICIO DO ARMAZENAMENTO NO BANCO
-//Verificando se j� existe algum usu�rio no BD com o CPF digitado
+//Verificando se já existe algum usuário no BD com o CPF digitado
 $sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
-//Caso n�o tenha nenhum usu�rio j� cadastrad com o CPF escolhido, o registro ser� inserido no BD
-if($this->query->RecordCount == 0){
+//Caso não tenha nenhum usuário já cadastrad com o CPF escolhido, o registro será inserido no BD
+if ($this->query->RecordCount == 0) {
   $sql = "INSERT INTO usuarios (NOME, CPF, DATANASC, EMAIL, SENHA) VALUES ($nome, $cpf, $datanasc, $email, $senha)";
 }
-//Caso o CPF j� esteja cadastrado no sistema, o usu�rio ser� redirecionado para a Tela de Login
-else
-{
-  <script>alert("Este CPF j� est� cadastrado em nosso sistema, voc� ser� redirecionado para a �rea de Login");</script>
-  header('Location:'. "login.php")
+
+//Caso o CPF já esteja cadastrado no sistema, o usuário será redirecionado para a Tela de Login
+else {
+?>
+  <script>
+    alert("Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login");
+  </script>
+<?php
+  header('Location:' . "login.php");
   return false;
 }
 
