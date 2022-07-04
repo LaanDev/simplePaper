@@ -1,5 +1,4 @@
 <?php ?>
-//HTML da página de cadastro
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +21,7 @@
   </header>
   <div id="cadastro-container">
     <h1 id="cadastro">Cadastro</h1>
-    <form id="register-form">
+    <form id="register-form" action="" method="post">
       <h2 id="subtopico">Dados Pessoais</h2>
       <div class="box100">
         <label for="nome">Nome</label>
@@ -61,45 +60,82 @@
         <input type="checkbox" name="termos" id="termos">
         <label for="termos" id="termos-label">Eu li e aceito os <a href="termos.php">termos de uso</a></label>
       </div>
-      <input type="submit" id="btn-submit" value="Cadastrar">
+      <input type="submit" id="btn-submit" value="Cadastrar" name="cadastrar">
 
     </form>
   </div>
 
   <p class="error-validation template"></p>
   <!--tem que ficar no final do body pra dar "tempo" de carregar o HTML todo da tela-->
-  <script src="../js/cadastro.js"></script>
-</body>
+
 
 </html>
+
 
 <?php
 //Realizando a conexão com o BD
 include "conexao.php";
 
-$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
 //Salvando os dados do formulário em suas respectivas variáveis
-$nome = $dados['nome'];
-$cpf = $dados['cpf'];
-$datanasc = $dados['datanasc'];
-$email = $dados['email'];
-$senha = $dados['senha'];
-$confirmasenha = $dados['confirmasenha'];
-$rua = $dados['rua'];
-$numero = $dados['numero'];
+if (isset($_POST['cadastrar'])) {
+  $nome = $_POST['nome'];
+  $cpf = $_POST['cpf'];
+  $datanasc = $_POST['datanasc'];
+  $email = $_POST['email'];
+  $senha = $_POST['senha'];
+  $confirmasenha = $_POST['confirmasenha'];
+  $rua = $_POST['rua'];
+  $numero = $_POST['numero'];
+} else {
+  $nome = '';
+  $cpf = '';
+  $datanasc = '';
+  $email = '';
+  $senha = '';
+  $confirmasenha = '';
+  $rua = '';
+  $numero = '';
+}
+$nome = "testando o nome";
+
 
 //Verificando se as senhas digitadas são iguais
 if ($senha !== $confirmasenha) {
 ?>
   <script>
     alert("Favor digitar a senha corretamente");
+    document.getElementById('senha').style.borderColor = "red";
+    document.getElementById('nome').value = "$nome";
   </script>
 <?php
   return false;
 } else {
-  return true;
+?>
+  <script>
+    document.getElementById('senha').style.borderColor = "#228B22";
+  </script>
+<?php
 }
+
+if ($nome == null | $nome == '') {
+?>
+  <script>
+    document.getElementById('senha').style.borderColor = "red";
+    document.getElementById('confirmasenha').style.borderColor = "red";
+  </script>
+<?php
+  return false;
+} else {
+?>
+  <script>
+    document.getElementById('senha').style.borderColor = "#228B22";
+    document.getElementById('confirmasenha').style.borderColor = "#228B22";
+  </script>
+<?php
+  //header('Location:' . "cadastro.php?nome=$nome&cpf=$cpf");
+}
+
+header('Location:' . "cadastro.php?nome=$nome&cpf=$cpf");
 
 //INICIO DO ARMAZENAMENTO NO BANCO
 //Verificando se já existe algum usuário no BD com o CPF digitado

@@ -80,10 +80,12 @@ form.addEventListener("submit", async (e) => {
   let dadosForm = new FormData(form);
   dadosForm.append("add", 1);
 
-  let dados = await fetch("cadastro.php", {
+  let dados = await fetch("./cadastro.php", {
     method: "POST",
     body: dadosForm,
   });
+
+  console.log("aaa" + dados);
 
 
 

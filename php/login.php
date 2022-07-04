@@ -1,5 +1,4 @@
 <?php ?>
-//HTML da página de cadastro
 <!DOCTYPE html>
 <html lang="en">
 
