@@ -54,7 +54,7 @@
         <input type="text" name="rua" id="rua" placeholder="Digite sua rua">
       </div>
       <div class="box35">
-        <label for="nome">Número</label>
+        <label for="numero">Número</label>
         <input type="text" name="numero" id="numero" placeholder="Digite o número da sua casa">
       </div>
       <div class="box100">
@@ -77,7 +77,7 @@
 //Realizando a conexão com o BD
 include "conexao.php";
 
-
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
 //Salvando os dados do formulário em suas respectivas variáveis
 $nome = $dados['nome'];
