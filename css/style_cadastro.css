@@ -33,7 +33,7 @@ a:hover {
 
 /*teste de cabeçalho*/
 .cabecalho {
-  margin-top: 0;
+  margin-top: 10px;
   width: 100%;
   float: left;
 }
@@ -145,6 +145,7 @@ input[type="submit"]:hover {
 #cadastro {
   text-align: center;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 #subtopico {

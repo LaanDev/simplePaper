@@ -41,6 +41,22 @@
         <input type="email" name="email" id="email" placeholder="Digite seu email" autocomplete="off">
       </div>
       <div class="box45 espacamento">
+        <label for="telefone">Telefone</label>
+        <input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone Ex: (xx) 9 XXXX-XXXX">
+      </div>
+      <div class="box45">
+        <label for="profissao">Profissão</label>
+        <input type="text" name="profissao" id="profissao" placeholder="Digite sua profissão">
+      </div>
+      <div class="box45 espacamento">
+        <label for="area_atuacao">Área de Atuação</label>
+        <input type="text" name="area_atuacao" id="area_atuacao" placeholder="Digite sua área de atuação">
+      </div>
+      <div class="box45">
+        <label for="nivel_graduacao">Nível de Graduação teste</label>
+        <input type="text" name="nivel_graduacao" id="nivel_graduacao" placeholder="Confirme seu nível de graduação">
+      </div>
+      <div class="box45 espacamento">
         <label for="senha">Senha</label>
         <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
       </div>
