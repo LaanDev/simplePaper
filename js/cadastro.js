@@ -1,12 +1,6 @@
 
 class Validator {
 
-  constructor() {
-    this.validations = [
-      'data-min-length',
-    ]
-
-  }
 
   //iniciar a validação de todos os campos
   validate(form) {
@@ -70,7 +64,6 @@ class Validator {
       } else {
         document.getElementById('termos').style.borderColor = "#228B22";
       }
-
     });
 
   }
@@ -81,8 +74,20 @@ let submit = document.getElementById("btn-submit");
 let validator = new Validator();
 
 //evento que dispara as validações (clique do botão CADASTRAR)
-submit.addEventListener('click', function (e) {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  let dadosForm = new FormData(form);
+  dadosForm.append("add", 1);
+
+  let dados = await fetch("./cadastro.php", {
+    method: "POST",
+    body: dadosForm,
+  });
+
+  console.log("aaa" + dados);
+
+
 
   validator.validate(form);
 });
