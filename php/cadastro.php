@@ -158,7 +158,8 @@ if (isset($_POST['cadastrar'])) {
   $cidade = '';
   $estado = '';
 }
-$nome = "testando o nome";
+
+exit($nome);
 
 
 //Verificando se as senhas digitadas são iguais
@@ -167,7 +168,6 @@ if ($senha !== $confirmasenha) {
   <script>
     alert("Favor digitar a senha corretamente");
     document.getElementById('senha').style.borderColor = "red";
-    document.getElementById('nome').value = "$nome";
   </script>
 <?php
   return false;
