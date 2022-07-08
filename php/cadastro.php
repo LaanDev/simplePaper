@@ -28,11 +28,11 @@ include "conexao.php";
       <h2 id="subtopico">Dados Pessoais</h2>
       <div class="box100">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" placeholder="Digite seu nome completo" data-min-length="3">
+        <input type="text" name="nome" id="nome" value="<?php echo $nome; ?>" placeholder="Digite seu nome completo" data-min-length="3">
       </div>
       <div class="box45 espacamento">
         <label for="CPF">CPF</label>
-        <input type="text" name="cpf" id="cpf" placeholder="Digite seu CPF">
+        <input type="text" name="cpf" id="cpf" value="<?php echo $cpf; ?>" placeholder="Digite seu CPF">
       </div>
       <div class="box45">
         <label for="datanasc">Data de Nascimento</label>
