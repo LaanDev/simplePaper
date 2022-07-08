@@ -28,7 +28,7 @@ include "conexao.php";
       <h2 id="subtopico">Dados Pessoais</h2>
       <div class="box100">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" value="<?php echo $nome; ?>" placeholder="Digite seu nome completo" data-min-length="3">
+        <input type="text" name="nome" id="nome" value="<?php if (isset($nome)) echo $nome; ?>" placeholder="Digite seu nome completo" data-min-length="3">
       </div>
       <div class="box45 espacamento">
         <label for="CPF">CPF</label>
