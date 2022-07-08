@@ -56,7 +56,7 @@ include "conexao.php";
       </div>
       <div class="box45">
         <label for="nivel_graduacao">Nível de Graduação</label>
-        <input type="text" name="nivel_graduacao" id="nivel_graduacao" placeholder="Confirme seu nível de graduação">
+        <input type="text" name="nivel_graduacao" id="nivel_graduacao" placeholder="Digite seu nível de graduação">
       </div>
       <div class="box45 espacamento">
         <label for="senha">Senha</label>
@@ -81,7 +81,7 @@ include "conexao.php";
       </div>
       <div class="box45">
         <label for="bairro">Bairro</label>
-        <input type="text" name="bairro" id="bairro" placeholder="Digite o bairro que você mora">
+        <input type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro">
       </div>
       <div class="box25 espacamento">
         <label for="cep">CEP</label>
@@ -89,11 +89,11 @@ include "conexao.php";
       </div>
       <div class="box40 espacamento">
         <label for="cidade">Cidade</label>
-        <input type="text" name="cidade" id="cidade" placeholder="Digite a Cidade que você mora">
+        <input type="text" name="cidade" id="cidade" placeholder="Digite sua Cidade">
       </div>
       <div class="box25">
         <label for="estado">Estado</label>
-        <input type="text" name="estado" id="estado" placeholder="Digite o Estado que você mora">
+        <input type="text" name="estado" id="estado" placeholder="Digite seu Estado">
       </div>
       <div class="box100">
         <input type="checkbox" name="termos" id="termos">
