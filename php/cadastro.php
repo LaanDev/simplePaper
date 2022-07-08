@@ -40,64 +40,64 @@ include "conexao.php";
       </div>
       <div class="box55 espacamento">
         <label for="email">E-mail</label>
-        <input type="email" name="email" id="email" placeholder="Digite seu email" autocomplete="off">
+        <input type="email" name="email" id="email" value="<?php echo $email; ?>" placeholder="Digite seu email" autocomplete="off">
       </div>
       <div class="box35">
         <label for="nacionalidade">Nacionalidade</label>
-        <input type="text" name="nacionalidade" id="nacionalidade" placeholder="Digite sua nacionalidade">
+        <input type="text" name="nacionalidade" id="nacionalidade" value="<?php echo $nacionalidade; ?>" placeholder="Digite sua nacionalidade">
       </div>
       <div class="box45 espacamento">
         <label for="telefone">Telefone</label>
-        <input type="text" name="telefone" id="telefone" placeholder="Digite seu telefone Ex: (xx) 9 XXXX-XXXX">
+        <input type="text" name="telefone" id="telefone" value="<?php echo $telefone; ?>" placeholder="Digite seu telefone Ex: (xx) 9 XXXX-XXXX">
       </div>
       <div class="box45">
         <label for="profissao">Profissão</label>
-        <input type="text" name="profissao" id="profissao" placeholder="Digite sua profissão">
+        <input type="text" name="profissao" id="profissao" value="<?php echo $profissao; ?>" placeholder="Digite sua profissão">
       </div>
       <div class="box45 espacamento">
         <label for="area_atuacao">Área de Atuação</label>
-        <input type="text" name="area_atuacao" id="area_atuacao" placeholder="Digite sua área de atuação">
+        <input type="text" name="area_atuacao" id="area_atuacao" value="<?php echo $area_atuacao; ?>" placeholder="Digite sua área de atuação">
       </div>
       <div class="box45">
         <label for="nivel_graduacao">Nível de Graduação</label>
-        <input type="text" name="nivel_graduacao" id="nivel_graduacao" placeholder="Digite seu nível de graduação">
+        <input type="text" name="nivel_graduacao" id="nivel_graduacao" value="<?php echo $nivel_graduacao; ?>" placeholder="Digite seu nível de graduação">
       </div>
       <div class="box45 espacamento">
         <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" placeholder="Digite sua senha">
+        <input type="password" name="senha" id="senha" value="<?php echo $senha; ?>" placeholder="Digite sua senha">
       </div>
       <div class="box45">
         <label for="confirmasenha">Confirma senha</label>
-        <input type="password" name="confirmasenha" id="confirmasenha" placeholder="Confirme sua senha">
+        <input type="password" name="confirmasenha" id="confirmasenha" value="<?php echo $confirmasenha; ?>" placeholder="Confirme sua senha">
       </div>
       <h2 class="box100" id="subtopico">Dados do Endereço</h2>
       <div class="box55 espacamento">
         <label for="rua">Rua</label>
-        <input type="text" name="rua" id="rua" placeholder="Digite sua rua">
+        <input type="text" name="rua" id="rua" value="<?php echo $rua; ?>" placeholder="Digite sua rua">
       </div>
       <div class="box35">
         <label for="numero">Número</label>
-        <input type="text" name="numero" id="numero" placeholder="Digite o número da sua casa">
+        <input type="text" name="numero" id="numero" value="<?php echo $numero; ?>" placeholder="Digite o número da sua casa">
       </div>
       <div class="box45 espacamento">
         <label for="complemento">Complemento</label>
-        <input type="text" name="complemento" id="complemento" placeholder="Digite o complemento da sua rua">
+        <input type="text" name="complemento" id="complemento" value="<?php echo $complemento; ?>" placeholder="Digite o complemento da sua rua">
       </div>
       <div class="box45">
         <label for="bairro">Bairro</label>
-        <input type="text" name="bairro" id="bairro" placeholder="Digite seu Bairro">
+        <input type="text" name="bairro" id="bairro" value="<?php echo $bairro; ?>" placeholder="Digite seu Bairro">
       </div>
       <div class="box25 espacamento">
         <label for="cep">CEP</label>
-        <input type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+        <input type="text" name="cep" id="cep" value="<?php echo $cep; ?>" placeholder="Digite seu CEP">
       </div>
       <div class="box40 espacamento">
         <label for="cidade">Cidade</label>
-        <input type="text" name="cidade" id="cidade" placeholder="Digite sua Cidade">
+        <input type="text" name="cidade" id="cidade" value="<?php echo $cidade; ?>" placeholder="Digite sua Cidade">
       </div>
       <div class="box25">
         <label for="estado">Estado</label>
-        <input type="text" name="estado" id="estado" placeholder="Digite seu Estado">
+        <input type="text" name="estado" id="estado" value="<?php echo $estado; ?>" placeholder="Digite seu Estado">
       </div>
       <div class="box100">
         <input type="checkbox" name="termos" id="termos">
