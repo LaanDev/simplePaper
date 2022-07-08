@@ -52,7 +52,7 @@
         <input type="text" name="area_atuacao" id="area_atuacao" placeholder="Digite sua área de atuação">
       </div>
       <div class="box45">
-        <label for="nivel_graduacao">Nível de Graduação teste</label>
+        <label for="nivel_graduacao">Nível de Graduação</label>
         <input type="text" name="nivel_graduacao" id="nivel_graduacao" placeholder="Confirme seu nível de graduação">
       </div>
       <div class="box45 espacamento">
@@ -71,6 +71,26 @@
       <div class="box35">
         <label for="numero">Número</label>
         <input type="text" name="numero" id="numero" placeholder="Digite o número da sua casa">
+      </div>
+      <div class="box45 espacamento">
+        <label for="complemento">Complemento</label>
+        <input type="text" name="complemento" id="complemento" placeholder="Digite o complemento da sua rua">
+      </div>
+      <div class="box45">
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro" id="bairro" placeholder="Digite o bairro que você mora">
+      </div>
+      <div class="box25 espacamento">
+        <label for="cep">CEP</label>
+        <input type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+      </div>
+      <div class="box40 espacamento">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" id="cidade" placeholder="Digite a Cidade que você mora">
+      </div>
+      <div class="box25">
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" id="estado" placeholder="Digite o Estado que você mora">
       </div>
       <div class="box100">
         <input type="checkbox" name="termos" id="termos">
@@ -97,20 +117,40 @@ if (isset($_POST['cadastrar'])) {
   $nome = $_POST['nome'];
   $cpf = $_POST['cpf'];
   $datanasc = $_POST['datanasc'];
+  $telefone = $_POST['telefone'];
   $email = $_POST['email'];
   $senha = $_POST['senha'];
   $confirmasenha = $_POST['confirmasenha'];
+  $nacionalidade = $_POST['nacionalidade'];
+  $profissao = $_POST['profissao'];
+  $area_atuacao = $_POST['area_atuacao'];
+  $nivel_graduacao = $_POST['nivel_graduacao'];
   $rua = $_POST['rua'];
   $numero = $_POST['numero'];
+  $complemento = $_POST['complemento'];
+  $bairro = $_POST['bairro'];
+  $cep = $_POST['cep'];
+  $cidade = $_POST['cidade'];
+  $estado = $_POST['estado'];
 } else {
   $nome = '';
   $cpf = '';
   $datanasc = '';
+  $telefone = '';
   $email = '';
   $senha = '';
   $confirmasenha = '';
+  $nacionalidade = '';
+  $profissao = '';
+  $area_atuacao = '';
+  $nivel_graduacao = '';
   $rua = '';
   $numero = '';
+  $complemento = '';
+  $bairro = '';
+  $cep = '';
+  $cidade = '';
+  $estado = '';
 }
 $nome = "testando o nome";
 
@@ -154,11 +194,27 @@ if ($nome == null | $nome == '') {
 //INICIO DO ARMAZENAMENTO NO BANCO
 //Verificando se já existe algum usuário no BD com o CPF digitado
 $sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
-//Caso não tenha nenhum usuário já cadastrad com o CPF escolhido, o registro será inserido no BD
-if ($this->query->RecordCount == 0) {
-  $sql = "INSERT INTO usuarios (NOME, CPF, DATANASC, EMAIL, SENHA) VALUES ($nome, $cpf, $datanasc, $email, $senha)";
+//Rodando a query acima :D
+if ($qr = mysqli_query($conn, $sql)) {
+  $last_id = mysqli_insert_id($conn);
+  $qr_usuarios = mysqli_fetch_array($qr);
+} else {
+  echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 
+//Caso o usuário ainda não tenha registro no banco, ele será inserido
+if (mysqli_num_rows($qr) == 0) {
+  //Adicionando os registros no banco caso o usuario ainda nao tenha registro
+  $sql = "INSERT INTO usuarios (NOME, CPF, DATANASC, TELEFONE, EMAIL, SENHA, NACIONALIDADE, PROFISSAO, AREA_ATUACAO, NIVEL_GRADUACAO, RUA, NUMERO, COMPLEMENTO, BAIRRO, CEP, ESTADO) 
+  VALUES($nome, $cpf, $datanasc, $telefone, $email, $senha, $nacionalidade, $profissao, $area_atuacao, $nivel_graduacao, $rua, $numero, $complemento, $bairro, $cep, $estado)";
+  //Caso não tenha nenhum usuário já cadastrad com o CPF escolhido, o registro será inserido no BD
+  if ($qr = mysqli_query($conn, $sql)) {
+    $last_id = mysqli_insert_id($conn);
+    $qr_usuarios = mysqli_fetch_array($qr);
+  } else {
+    echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
+  }
+}
 //Caso o CPF já esteja cadastrado no sistema, o usuário será redirecionado para a Tela de Login
 else {
 ?>

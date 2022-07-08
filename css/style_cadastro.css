@@ -74,6 +74,16 @@ form {
   position: relative;
 }
 
+.box40 {
+  flex: 1 1 40%;
+  position: relative;
+}
+
+.box25 {
+  flex: 1 1 25%;
+  position: relative;
+}
+
 .espacamento {
   margin-right: 2.5%;
 }
