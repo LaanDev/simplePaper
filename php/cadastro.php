@@ -122,6 +122,7 @@ include "conexao.php";
 
 //Salvando os dados do formulário em suas respectivas variáveis
 if (isset($_POST['cadastrar'])) {
+  exit("ENTROU AQUI");
   $nome = $_POST['nome'];
   $cpf = $_POST['cpf'];
   $datanasc = $_POST['datanasc'];
@@ -161,7 +162,6 @@ if (isset($_POST['cadastrar'])) {
   $estado = '';
 }
 
-exit($nome);
 
 
 //Verificando se as senhas digitadas são iguais
