@@ -38,9 +38,13 @@ include "conexao.php";
         <label for="datanasc">Data de Nascimento</label>
         <input type="date" name="datanasc" id="datanasc">
       </div>
-      <div class="box100">
+      <div class="box55 espacamento">
         <label for="email">E-mail</label>
         <input type="email" name="email" id="email" placeholder="Digite seu email" autocomplete="off">
+      </div>
+      <div class="box35">
+        <label for="nacionalidade">Nacionalidade</label>
+        <input type="text" name="nacionalidade" id="nacionalidade" placeholder="Digite sua nacionalidade">
       </div>
       <div class="box45 espacamento">
         <label for="telefone">Telefone</label>
