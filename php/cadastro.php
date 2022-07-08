@@ -1,4 +1,7 @@
-<?php ?>
+<?php
+//Realizando a conexão com o BD
+include "conexao.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,8 +112,7 @@
 
 
 <?php
-//Realizando a conexão com o BD
-include "conexao.php";
+
 
 //Salvando os dados do formulário em suas respectivas variáveis
 if (isset($_POST['cadastrar'])) {
