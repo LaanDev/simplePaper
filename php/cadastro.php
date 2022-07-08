@@ -48,7 +48,7 @@ include "conexao.php";
       </div>
       <div class="box45 espacamento">
         <label for="telefone">Telefone</label>
-        <input type="text" name="telefone" id="telefone" value="<?php if (isset($telefone)) echo $telefone; ?>" placeholder="Digite seu telefone Ex: (xx) 9 XXXX-XXXX">
+        <input type="text" name="telefone" id="telefone" value="<?php if (isset($telefone)) echo $telefone; ?>" placeholder="Digite seu telefone Ex: (xx) 9 xxxx-xxxx">
       </div>
       <div class="box45">
         <label for="profissao">Profissão</label>
@@ -120,7 +120,6 @@ include "conexao.php";
 
 //Salvando os dados do formulário em suas respectivas variáveis
 if (isset($_POST['cadastrar'])) {
-  exit("ENTROU AQUI");
   $nome = $_POST['nome'];
   $cpf = $_POST['cpf'];
   $datanasc = $_POST['datanasc'];
