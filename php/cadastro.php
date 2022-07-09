@@ -158,8 +158,19 @@ if (isset($_POST['cadastrar'])) {
   $cidade = '';
   $estado = '';
 }
+//INICIO DO ARMAZENAMENTO NO BANCO
+//Verificando se já existe algum usuário no BD com o CPF digitado
+$sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
+//Rodando a query acima :D
+if ($qr = mysqli_query($conn, $sql)) {
+  $last_id = mysqli_insert_id($conn);
+  $qr_usuarios = mysqli_fetch_array($qr);
+} else {
+  echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
+}
 
-exit($senha . $confirmasenha);
+exit($qr_usuarios);
+//exit($senha . $confirmasenha);
 
 //Verificando se as senhas digitadas são iguais
 if ($senha !== $confirmasenha) {
