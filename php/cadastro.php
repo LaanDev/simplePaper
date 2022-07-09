@@ -159,7 +159,7 @@ if (isset($_POST['cadastrar'])) {
   $estado = '';
 }
 
-
+exit($senha . $confirmasenha);
 
 //Verificando se as senhas digitadas são iguais
 if ($senha !== $confirmasenha) {
