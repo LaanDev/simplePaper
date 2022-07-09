@@ -207,6 +207,8 @@ if ($qr = mysqli_query($conn, $sql)) {
   echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 
+exit($qr_usuarios);
+
 //Caso o usuário ainda não tenha registro no banco, ele será inserido
 if (mysqli_num_rows($qr) == 0) {
   //Adicionando os registros no banco caso o usuario ainda nao tenha registro
