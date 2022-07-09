@@ -31,7 +31,7 @@ include "conexao.php";
         <input type="text" name="nome" id="nome" value="<?php if (isset($nome)) echo $nome; ?>" placeholder="Digite seu nome completo" data-min-length="3">
       </div>
       <div class="box45 espacamento">
-        <label for="CPF">CPF</label>
+        <label for="cpf">CPF</label>
         <input type="text" name="cpf" id="cpf" value="<?php if (isset($cpf)) echo $cpf; ?>" placeholder="Digite seu CPF">
       </div>
       <div class="box45">
@@ -160,7 +160,7 @@ if (isset($_POST['cadastrar'])) {
 }
 //INICIO DO ARMAZENAMENTO NO BANCO
 //Verificando se já existe algum usuário no BD com o CPF digitado
-$sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
+$sql = "SELECT CPF FROM usuarios WHERE CPF = '$cpf'";
 
 exit($sql);
 //Rodando a query acima :D
