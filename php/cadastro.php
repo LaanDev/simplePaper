@@ -158,13 +158,13 @@ if (isset($_POST['cadastrar'])) {
   $cidade = '';
   $estado = '';
 }
-
+exit($cpf);
 exit($senha . $confirmasenha);
 //INICIO DO ARMAZENAMENTO NO BANCO
 //Verificando se já existe algum usuário no BD com o CPF digitado
 $sql = "SELECT CPF FROM usuarios WHERE CPF = '$cpf'";
 
-exit($sql);
+exit($cpf);
 //Rodando a query acima :D
 if ($qr = mysqli_query($conn, $sql)) {
   $last_id = mysqli_insert_id($conn);
