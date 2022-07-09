@@ -169,7 +169,7 @@ if ($qr = mysqli_query($conn, $sql)) {
   echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-exit($qr_usuarios);
+exit($sql);
 //exit($senha . $confirmasenha);
 
 //Verificando se as senhas digitadas são iguais
