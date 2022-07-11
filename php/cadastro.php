@@ -173,7 +173,7 @@ if (isset($_POST['cadastrar'])) {
 // exit($qr_usuarios['CPF']);
 
 //Verificando se as senhas digitadas são iguais
-if ($senha !== $confirmasenha) {
+if ($senha != $confirmasenha) {
 ?>
   <script>
     alert("Favor digitar a senha corretamente");
