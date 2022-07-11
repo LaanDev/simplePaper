@@ -256,8 +256,7 @@ if (mysqli_num_rows($qr) == 0) {
 else {
   echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
 
-  header('Location:' . "login.php");
-  return false;
+  header('Location: login.php');
 }
 
 
