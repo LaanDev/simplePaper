@@ -222,7 +222,7 @@ if ($cpf == null | $cpf == '') {
 }
 
 if (!isset($_POST['termos'])) {
-  echo  "<script>alert('Favor ler os termos de uso!');</script>";
+  echo  "<script>alert('Favor ler os Termos de uso!');</script>";
   return false;
 }
 
@@ -249,6 +249,7 @@ if (mysqli_num_rows($qr) == 0) {
   //Adicionando os registros no banco caso o usuario ainda nao tenha registro
   $sql = "INSERT INTO usuarios (NOME, CPF, DATANASC, TELEFONE, EMAIL, SENHA, NACIONALIDADE, PROFISSAO, AREA_ATUACAO, NIVEL_GRADUACAO, RUA, NUMERO, COMPLEMENTO, BAIRRO, CEP, ESTADO) 
   VALUES('$nome', $cpf, '$datanasc', $telefone, '$email', '$senha', '$nacionalidade', '$profissao', '$area_atuacao', '$nivel_graduacao', '$rua', $numero, '$complemento', '$bairro', $cep, '$estado')";
+  exit($sql);
   //Caso não tenha nenhum usuário já cadastrad com o CPF escolhido, o registro será inserido no BD
   if ($qr = mysqli_query($conn, $sql)) {
     $last_id = mysqli_insert_id($conn);
