@@ -124,109 +124,109 @@ if (isset($_POST['cadastrar'])) {
   if ($_POST['nome'] != null && $_POST['nome'] != '') {
     $nome = $_POST['nome'];
   } else {
-    //$nome = "NULL";
+    $nome = "NULL";
   }
 
   if ($_POST['cpf'] != null && $_POST['cpf'] != '') {
     $cpf = $_POST['cpf'];
   } else {
-    //$cpf = "NULL";
+    $cpf = "NULL";
   }
 
   if ($_POST['datanasc'] != null && $_POST['datanasc'] != '') {
     $datanasc = $_POST['datanasc'];
   } else {
-    //$datanasc = "NULL";
+    $datanasc = "NULL";
   }
 
   if ($_POST['telefone'] != null && $_POST['telefone'] != '') {
     $telefone = $_POST['telefone'];
   } else {
-    //$telefone = "NULL";
+    $telefone = "NULL";
   }
 
   if ($_POST['email'] != null && $_POST['email'] != '') {
     $email = $_POST['email'];
   } else {
-    //$email = "NULL";
+    $email = "NULL";
   }
 
   if ($_POST['senha'] != null && $_POST['senha'] != '') {
     $senha = $_POST['senha'];
   } else {
-    //$senha = "NULL";
+    $senha = "NULL";
   }
 
   if ($_POST['confirmasenha'] != null && $_POST['confirmasenha'] != '') {
     $confirmasenha = $_POST['confirmasenha'];
   } else {
-    //$confirmasenha = "NULL";
+    $confirmasenha = "NULL";
   }
 
   if ($_POST['nacionalidade'] != null && $_POST['nacionalidade'] != '') {
     $nacionalidade = $_POST['nacionalidade'];
   } else {
-    //$nacionalidade = "NULL";
+    $nacionalidade = "NULL";
   }
 
   if ($_POST['profissao'] != null && $_POST['profissao'] != '') {
     $profissao = $_POST['profissao'];
   } else {
-    //$profissao = "NULL";
+    $profissao = "NULL";
   }
 
   if ($_POST['area_atuacao'] != null && $_POST['area_atuacao'] != '') {
     $area_atuacao = $_POST['area_atuacao'];
   } else {
-    //$area_atuacao = "NULL";
+    $area_atuacao = "NULL";
   }
 
   if ($_POST['nivel_graduacao'] != null && $_POST['nivel_graduacao'] != '') {
     $nivel_graduacao = $_POST['nivel_graduacao'];
   } else {
-    //$nivel_graduacao = "NULL";
+    $nivel_graduacao = "NULL";
   }
 
   if ($_POST['rua'] != null && $_POST['rua'] != '') {
     $rua = $_POST['rua'];
   } else {
-    //$rua = "NULL";
+    $rua = "NULL";
   }
 
   if ($_POST['numero'] != null && $_POST['numero'] != '') {
     $numero = $_POST['numero'];
   } else {
-    //$numero = "NULL";
+    $numero = "NULL";
   }
 
   if ($_POST['complemento'] != null && $_POST['complemento'] != '') {
     $complemento = $_POST['complemento'];
   } else {
-    //$complemento = "NULL";
+    $complemento = "NULL";
   }
 
   if ($_POST['bairro'] != null && $_POST['bairro'] != '') {
     $bairro = $_POST['bairro'];
   } else {
-    //$bairro = "NULL";
+    $bairro = "NULL";
   }
 
   if ($_POST['cep'] != null && $_POST['cep'] != '') {
     $cep = $_POST['cep'];
   } else {
-    //$cep = "NULL";
+    $cep = "NULL";
   }
 
   if ($_POST['cidade'] != null && $_POST['cidade'] != '') {
     $cidade = $_POST['cidade'];
   } else {
-    //$cidade = "NULL";
+    $cidade = "NULL";
   }
 
   if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $estado = $_POST['estado'];
   } else {
-    //$estado = "NULL";
+    $estado = "NULL";
   }
 
 
