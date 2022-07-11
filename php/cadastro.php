@@ -225,8 +225,10 @@ if (isset($_POST['cadastrar'])) {
 
   if (isset($_POST['estado'])) {
     $estado = $_POST['estado'];
+    exit("Nao ta funcionando");
   } else {
     $estado = "NULL";
+    exit("Ta funcionando");
   }
 
 
@@ -319,9 +321,11 @@ if (isset($_POST['cadastrar'])) {
   }
   //Caso o CPF já esteja cadastrado no sistema, o usuário será redirecionado para a Tela de Login
   else {
-    //echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
+    echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
 
-    header('Location: login.php');
+    return false;
+    //Tentar solucionar o erro: Warning: Cannot modify header information - headers already sent by (output started at D:\xampp\htdocs\SimplePaper\simplePaper\php\cadastro.php:92) in D:\xampp\htdocs\SimplePaper\simplePaper\php\cadastro.php on line 324
+    //header('Location: login.php');
   }
 }
 
