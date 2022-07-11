@@ -239,8 +239,6 @@ if ($qr = mysqli_query($conn, $sql)) {
   echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-exit("PAROU AQUI" . $qr_usuarios['CPF']);
-
 //Caso o usuário ainda não tenha registro no banco, ele será inserido
 if (mysqli_num_rows($qr) == 0) {
   //Adicionando os registros no banco caso o usuario ainda nao tenha registro
@@ -256,11 +254,8 @@ if (mysqli_num_rows($qr) == 0) {
 }
 //Caso o CPF já esteja cadastrado no sistema, o usuário será redirecionado para a Tela de Login
 else {
-?>
-  <script>
-    alert("Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login");
-  </script>
-<?php
+  echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
+
   header('Location:' . "login.php");
   return false;
 }
