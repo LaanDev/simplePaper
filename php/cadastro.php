@@ -171,16 +171,16 @@ if (isset($_POST['cadastrar'])) {
 // }
 
 // exit($qr_usuarios['CPF']);
-
+$flag = 0;
 //Verificando se as senhas digitadas são iguais
 if ($senha != $confirmasenha) {
 ?>
   <script>
-    alert("Favor digitar a senha corretamente");
     document.getElementById('senha').style.borderColor = "red";
   </script>
 <?php
-  return false;
+  //setando uma flag para marcar quando algum campo não esta preenchido corretamente
+  $flag = 1;
 } else {
 ?>
   <script>
@@ -195,7 +195,8 @@ if ($nome == null | $nome == '') {
     document.getElementById('nome').style.borderColor = "red";
   </script>
 <?php
-  return false;
+  //setando uma flag para marcar quando algum campo não esta preenchido corretamente
+  $flag = 1;
 } else {
 ?>
   <script>
@@ -210,13 +211,20 @@ if ($cpf == null | $cpf == '') {
     document.getElementById('cpf').style.borderColor = "red";
   </script>
 <?php
-  return false;
+  //setando uma flag para marcar quando algum campo não esta preenchido corretamente
+  $flag = 1;
 } else {
 ?>
   <script>
     document.getElementById('cpf').style.borderColor = "#228B22";
   </script>
 <?php
+}
+
+//verificando se a 
+if ($flag == 1) {
+  echo  "<script>alert('Favor preencher os campos corretamente!');</script>";
+  return false;
 }
 
 
