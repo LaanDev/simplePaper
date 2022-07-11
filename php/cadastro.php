@@ -218,7 +218,7 @@ if ($qr = mysqli_query($conn, $sql)) {
   echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-exit($qr_usuarios);
+exit($qr_usuarios['CPF']);
 
 //Caso o usuário ainda não tenha registro no banco, ele será inserido
 if (mysqli_num_rows($qr) == 0) {
