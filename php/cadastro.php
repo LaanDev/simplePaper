@@ -129,7 +129,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$nome = "NULL";
+    $nome = "";
   ?>
     <script>
       document.getElementById('nome').style.borderColor = "red";
@@ -148,7 +148,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$cpf = "NULL";
+    $cpf = "";
   ?>
     <script>
       document.getElementById('cpf').style.borderColor = "red";
@@ -167,7 +167,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$datanasc = "NULL";
+    $datanasc = "";
   ?>
     <script>
       document.getElementById('datanasc').style.borderColor = "red";
@@ -186,7 +186,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$telefone = "NULL";
+    $telefone = "";
   ?>
     <script>
       document.getElementById('telefone').style.borderColor = "red";
@@ -205,7 +205,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$email = "NULL";
+    $email = "";
   ?>
     <script>
       document.getElementById('email').style.borderColor = "red";
@@ -224,7 +224,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$senha = "NULL";
+    $senha = "";
   ?>
     <script>
       document.getElementById('senha').style.borderColor = "red";
@@ -243,7 +243,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$confirmasenha = "NULL";
+    $confirmasenha = "";
   ?>
     <script>
       document.getElementById('confirmasenha').style.borderColor = "red";
@@ -262,7 +262,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$nacionalidade = "NULL";
+    $nacionalidade = "";
   ?>
     <script>
       document.getElementById('nacionalidade').style.borderColor = "red";
@@ -281,7 +281,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$profissao = "NULL";
+    $profissao = "";
   ?>
     <script>
       document.getElementById('profissao').style.borderColor = "red";
@@ -300,7 +300,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$area_atuacao = "NULL";
+    $area_atuacao = "";
   ?>
     <script>
       document.getElementById('area_atuacao').style.borderColor = "red";
@@ -319,7 +319,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$nivel_graduacao = "NULL";
+    $nivel_graduacao = "";
   ?>
     <script>
       document.getElementById('nivel_graduacao').style.borderColor = "red";
@@ -338,7 +338,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$rua = "NULL";
+    $rua = "";
   ?>
     <script>
       document.getElementById('rua').style.borderColor = "red";
@@ -357,7 +357,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$numero = "NULL";
+    $numero = "";
   ?>
     <script>
       document.getElementById('numero').style.borderColor = "red";
@@ -376,7 +376,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$complemento = "NULL";
+    $complemento = "";
   ?>
     <script>
       document.getElementById('complemento').style.borderColor = "red";
@@ -395,7 +395,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$bairro = "NULL";
+    $bairro = "";
   ?>
     <script>
       document.getElementById('bairro').style.borderColor = "red";
@@ -414,7 +414,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$cep = "NULL";
+    $cep = "";
   ?>
     <script>
       document.getElementById('cep').style.borderColor = "red";
@@ -433,7 +433,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$cidade = "NULL";
+    $cidade = "";
   ?>
     <script>
       document.getElementById('cidade').style.borderColor = "red";
@@ -452,7 +452,7 @@ if (isset($_POST['cadastrar'])) {
     </script>
   <?php
   } else {
-    //$estado = "NULL";
+    $estado = "";
   ?>
     <script>
       document.getElementById('estado').style.borderColor = "red";
@@ -479,40 +479,9 @@ if (isset($_POST['cadastrar'])) {
     <script>
       document.getElementById('senha').style.borderColor = "#228B22";
     </script>
-  <?php
-  }
-
-  if ($nome == null | $nome == '') {
-  ?>
-    <script>
-      document.getElementById('nome').style.borderColor = "red";
-    </script>
-  <?php
-    //setando uma flag para marcar quando algum campo não esta preenchido corretamente
-    $flag = 1;
-  } else {
-  ?>
-    <script>
-      document.getElementById('nome').style.borderColor = "#228B22";
-    </script>
-  <?php
-  }
-
-  if ($cpf == null | $cpf == '') {
-  ?>
-    <script>
-      document.getElementById('cpf').style.borderColor = "red";
-    </script>
-  <?php
-    //setando uma flag para marcar quando algum campo não esta preenchido corretamente
-    $flag = 1;
-  } else {
-  ?>
-    <script>
-      document.getElementById('cpf').style.borderColor = "#228B22";
-    </script>
 <?php
   }
+
 
   if (!isset($_POST['termos'])) {
     echo  "<script>alert('Favor ler os Termos de uso!');</script>";
@@ -541,8 +510,8 @@ if (isset($_POST['cadastrar'])) {
   if (mysqli_num_rows($qr) == 0) {
     //Adicionando os registros no banco caso o usuario ainda nao tenha registro
     $sql = "INSERT INTO usuarios (NOME, CPF, DATANASC, TELEFONE, EMAIL, SENHA, NACIONALIDADE, PROFISSAO, AREA_ATUACAO, NIVEL_GRADUACAO, RUA, NUMERO, COMPLEMENTO, BAIRRO, CEP, ESTADO) 
-  VALUES($nome, $cpf, $datanasc, $telefone, $email, $senha, $nacionalidade, $profissao, $area_atuacao, $nivel_graduacao, $rua, $numero, $complemento, $bairro, $cep, $estado)";
-    exit($sql);
+  VALUES('$nome', $cpf, '$datanasc', $telefone, '$email', '$senha', '$nacionalidade', '$profissao', '$area_atuacao', '$nivel_graduacao', '$rua', $numero, '$complemento', '$bairro', $cep, '$estado')";
+    //exit($sql);
     //Caso não tenha nenhum usuário já cadastrad com o CPF escolhido, o registro será inserido no BD
     if ($qr = mysqli_query($conn, $sql)) {
       $last_id = mysqli_insert_id($conn);
