@@ -254,7 +254,7 @@ if (mysqli_num_rows($qr) == 0) {
 }
 //Caso o CPF já esteja cadastrado no sistema, o usuário será redirecionado para a Tela de Login
 else {
-  echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
+  //echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
 
   header('Location: login.php');
 }
