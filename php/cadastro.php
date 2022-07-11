@@ -162,7 +162,7 @@ if (isset($_POST['cadastrar'])) {
 //Verificando se já existe algum usuário no BD com o CPF digitado
 // $sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
 
-// //Rodando a query acima :D
+// // //Rodando a query acima :D
 // if ($qr = mysqli_query($conn, $sql)) {
 //   $last_id = mysqli_insert_id($conn);
 //   $qr_usuarios = mysqli_fetch_array($qr);
@@ -210,7 +210,7 @@ if ($nome == null | $nome == '') {
 //INICIO DO ARMAZENAMENTO NO BANCO
 //Verificando se já existe algum usuário no BD com o CPF digitado
 $sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
-//Rodando a query acima :D
+// //Rodando a query acima :D
 if ($qr = mysqli_query($conn, $sql)) {
   $last_id = mysqli_insert_id($conn);
   $qr_usuarios = mysqli_fetch_array($qr);
