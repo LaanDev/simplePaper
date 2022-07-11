@@ -192,16 +192,29 @@ if ($senha != $confirmasenha) {
 if ($nome == null | $nome == '') {
 ?>
   <script>
-    document.getElementById('senha').style.borderColor = "red";
-    document.getElementById('confirmasenha').style.borderColor = "red";
+    document.getElementById('nome').style.borderColor = "red";
   </script>
 <?php
   return false;
 } else {
 ?>
   <script>
-    document.getElementById('senha').style.borderColor = "#228B22";
-    document.getElementById('confirmasenha').style.borderColor = "#228B22";
+    document.getElementById('nome').style.borderColor = "#228B22";
+  </script>
+<?php
+}
+
+if ($cpf == null | $cpf == '') {
+?>
+  <script>
+    document.getElementById('cpf').style.borderColor = "red";
+  </script>
+<?php
+  return false;
+} else {
+?>
+  <script>
+    document.getElementById('cpf').style.borderColor = "#228B22";
   </script>
 <?php
 }
@@ -218,7 +231,7 @@ if ($qr = mysqli_query($conn, $sql)) {
   echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-exit($qr_usuarios['CPF']);
+exit("PAROU AQUI" . $qr_usuarios['CPF']);
 
 //Caso o usuário ainda não tenha registro no banco, ele será inserido
 if (mysqli_num_rows($qr) == 0) {
