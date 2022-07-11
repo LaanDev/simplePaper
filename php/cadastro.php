@@ -117,123 +117,357 @@ include "conexao.php";
 
 <?php
 
-
+$flag = 0;
 //Verificando se o botão "CADASTRAR" foi clicado
 if (isset($_POST['cadastrar'])) {
 
   if ($_POST['nome'] != null && $_POST['nome'] != '') {
     $nome = $_POST['nome'];
+?>
+    <script>
+      document.getElementById('nome').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $nome = "NULL";
+    //$nome = "NULL";
+  ?>
+    <script>
+      document.getElementById('nome').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['cpf'] != null && $_POST['cpf'] != '') {
     $cpf = $_POST['cpf'];
+  ?>
+    <script>
+      document.getElementById('cpf').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $cpf = "NULL";
+    //$cpf = "NULL";
+  ?>
+    <script>
+      document.getElementById('cpf').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['datanasc'] != null && $_POST['datanasc'] != '') {
     $datanasc = $_POST['datanasc'];
+  ?>
+    <script>
+      document.getElementById('datanasc').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $datanasc = "NULL";
+    //$datanasc = "NULL";
+  ?>
+    <script>
+      document.getElementById('datanasc').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['telefone'] != null && $_POST['telefone'] != '') {
     $telefone = $_POST['telefone'];
+  ?>
+    <script>
+      document.getElementById('telefone').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $telefone = "NULL";
+    //$telefone = "NULL";
+  ?>
+    <script>
+      document.getElementById('telefone').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['email'] != null && $_POST['email'] != '') {
     $email = $_POST['email'];
+  ?>
+    <script>
+      document.getElementById('email').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $email = "NULL";
+    //$email = "NULL";
+  ?>
+    <script>
+      document.getElementById('email').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['senha'] != null && $_POST['senha'] != '') {
     $senha = $_POST['senha'];
+  ?>
+    <script>
+      document.getElementById('senha').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $senha = "NULL";
+    //$senha = "NULL";
+  ?>
+    <script>
+      document.getElementById('senha').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['confirmasenha'] != null && $_POST['confirmasenha'] != '') {
     $confirmasenha = $_POST['confirmasenha'];
+  ?>
+    <script>
+      document.getElementById('confirmasenha').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $confirmasenha = "NULL";
+    //$confirmasenha = "NULL";
+  ?>
+    <script>
+      document.getElementById('confirmasenha').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['nacionalidade'] != null && $_POST['nacionalidade'] != '') {
     $nacionalidade = $_POST['nacionalidade'];
+  ?>
+    <script>
+      document.getElementById('nacionalidade').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $nacionalidade = "NULL";
+    //$nacionalidade = "NULL";
+  ?>
+    <script>
+      document.getElementById('nacionalidade').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['profissao'] != null && $_POST['profissao'] != '') {
     $profissao = $_POST['profissao'];
+  ?>
+    <script>
+      document.getElementById('profissao').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $profissao = "NULL";
+    //$profissao = "NULL";
+  ?>
+    <script>
+      document.getElementById('profissao').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['area_atuacao'] != null && $_POST['area_atuacao'] != '') {
     $area_atuacao = $_POST['area_atuacao'];
+  ?>
+    <script>
+      document.getElementById('area_atuacao').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $area_atuacao = "NULL";
+    //$area_atuacao = "NULL";
+  ?>
+    <script>
+      document.getElementById('area_atuacao').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['nivel_graduacao'] != null && $_POST['nivel_graduacao'] != '') {
     $nivel_graduacao = $_POST['nivel_graduacao'];
+  ?>
+    <script>
+      document.getElementById('nivel_graduacao').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $nivel_graduacao = "NULL";
+    //$nivel_graduacao = "NULL";
+  ?>
+    <script>
+      document.getElementById('nivel_graduacao').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['rua'] != null && $_POST['rua'] != '') {
     $rua = $_POST['rua'];
+  ?>
+    <script>
+      document.getElementById('rua').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $rua = "NULL";
+    //$rua = "NULL";
+  ?>
+    <script>
+      document.getElementById('rua').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['numero'] != null && $_POST['numero'] != '') {
     $numero = $_POST['numero'];
+  ?>
+    <script>
+      document.getElementById('numero').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $numero = "NULL";
+    //$numero = "NULL";
+  ?>
+    <script>
+      document.getElementById('numero').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['complemento'] != null && $_POST['complemento'] != '') {
     $complemento = $_POST['complemento'];
+  ?>
+    <script>
+      document.getElementById('complemento').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $complemento = "NULL";
+    //$complemento = "NULL";
+  ?>
+    <script>
+      document.getElementById('complemento').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['bairro'] != null && $_POST['bairro'] != '') {
     $bairro = $_POST['bairro'];
+  ?>
+    <script>
+      document.getElementById('bairro').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $bairro = "NULL";
+    //$bairro = "NULL";
+  ?>
+    <script>
+      document.getElementById('bairro').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['cep'] != null && $_POST['cep'] != '') {
     $cep = $_POST['cep'];
+  ?>
+    <script>
+      document.getElementById('cep').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $cep = "NULL";
+    //$cep = "NULL";
+  ?>
+    <script>
+      document.getElementById('cep').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['cidade'] != null && $_POST['cidade'] != '') {
     $cidade = $_POST['cidade'];
+  ?>
+    <script>
+      document.getElementById('cidade').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $cidade = "NULL";
+    //$cidade = "NULL";
+  ?>
+    <script>
+      document.getElementById('cidade').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
   if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $estado = $_POST['estado'];
+  ?>
+    <script>
+      document.getElementById('estado').style.borderColor = "#228B22";
+    </script>
+  <?php
   } else {
-    $estado = "NULL";
+    //$estado = "NULL";
+  ?>
+    <script>
+      document.getElementById('estado').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente 
+    //OBS: usar apenas em campos obrigatórios
+    $flag = 1;
   }
 
 
-  $flag = 0;
+
   //Verificando se as senhas digitadas são iguais
   if ($senha != $confirmasenha) {
-?>
+  ?>
     <script>
       document.getElementById('senha').style.borderColor = "red";
     </script>
