@@ -118,152 +118,213 @@ include "conexao.php";
 <?php
 
 
-//Salvando os dados do formulário em suas respectivas variáveis
+//Verificando se o botão "CADASTRAR" foi clicado
 if (isset($_POST['cadastrar'])) {
-  $nome = $_POST['nome'];
-  $cpf = $_POST['cpf'];
-  $datanasc = $_POST['datanasc'];
-  $telefone = $_POST['telefone'];
-  $email = $_POST['email'];
-  $senha = $_POST['senha'];
-  $confirmasenha = $_POST['confirmasenha'];
-  $nacionalidade = $_POST['nacionalidade'];
-  $profissao = $_POST['profissao'];
-  $area_atuacao = $_POST['area_atuacao'];
-  $nivel_graduacao = $_POST['nivel_graduacao'];
-  $rua = $_POST['rua'];
-  $numero = $_POST['numero'];
-  $complemento = $_POST['complemento'];
-  $bairro = $_POST['bairro'];
-  $cep = $_POST['cep'];
-  $cidade = $_POST['cidade'];
-  $estado = $_POST['estado'];
-} else {
-  $nome = NULL;
-  $cpf = NULL;
-  $datanasc = NULL;
-  $telefone = NULL;
-  $email = NULL;
-  $senha = NULL;
-  $confirmasenha = NULL;
-  $nacionalidade = NULL;
-  $profissao = NULL;
-  $area_atuacao = NULL;
-  $nivel_graduacao = NULL;
-  $rua = NULL;
-  $numero = NULL;
-  $complemento = NULL;
-  $bairro = NULL;
-  $cep = NULL;
-  $cidade = NULL;
-  $estado = NULL;
-}
-//INICIO DO ARMAZENAMENTO NO BANCO
-//Verificando se já existe algum usuário no BD com o CPF digitado
-// $sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
 
-// // //Rodando a query acima :D
-// if ($qr = mysqli_query($conn, $sql)) {
-//   $last_id = mysqli_insert_id($conn);
-//   $qr_usuarios = mysqli_fetch_array($qr);
-// } else {
-//   echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
-// }
+  if (isset($_POST['nome'])) {
+    $nome = $_POST['nome'];
+  } else {
+    $nome = NULL;
+  }
 
-// exit($qr_usuarios['CPF']);
-$flag = 0;
-//Verificando se as senhas digitadas são iguais
-if ($senha != $confirmasenha) {
+  if (isset($_POST['cpf'])) {
+    $cpf = $_POST['cpf'];
+  } else {
+    $cpf = NULL;
+  }
+
+  if (isset($_POST['datanasc'])) {
+    $datanasc = $_POST['datanasc'];
+  } else {
+    $datanasc = NULL;
+  }
+
+  if (isset($_POST['telefone'])) {
+    $telefone = $_POST['telefone'];
+  } else {
+    $telefone = NULL;
+  }
+
+  if (isset($_POST['email'])) {
+    $email = $_POST['email'];
+  } else {
+    $email = NULL;
+  }
+
+  if (isset($_POST['senha'])) {
+    $senha = $_POST['senha'];
+  } else {
+    $senha = NULL;
+  }
+
+  if (isset($_POST['confirmasenha'])) {
+    $confirmasenha = $_POST['confirmasenha'];
+  } else {
+    $confirmasenha = NULL;
+  }
+
+  if (isset($_POST['nacionalidade'])) {
+    $nacionalidade = $_POST['nacionalidade'];
+  } else {
+    $nacionalidade = NULL;
+  }
+
+  if (isset($_POST['profissao'])) {
+    $profissao = $_POST['profissao'];
+  } else {
+    $profissao = NULL;
+  }
+
+  if (isset($_POST['area_atuacao'])) {
+    $area_atuacao = $_POST['area_atuacao'];
+  } else {
+    $area_atuacao = NULL;
+  }
+
+  if (isset($_POST['nivel_graduacao'])) {
+    $nivel_graduacao = $_POST['nivel_graduacao'];
+  } else {
+    $nivel_graduacao = NULL;
+  }
+
+  if (isset($_POST['rua'])) {
+    $rua = $_POST['rua'];
+  } else {
+    $rua = NULL;
+  }
+
+  if (isset($_POST['numero'])) {
+    $numero = $_POST['numero'];
+  } else {
+    $numero = NULL;
+  }
+
+  if (isset($_POST['complemento'])) {
+    $complemento = $_POST['complemento'];
+  } else {
+    $complemento = NULL;
+  }
+
+  if (isset($_POST['bairro'])) {
+    $bairro = $_POST['bairro'];
+  } else {
+    $bairro = NULL;
+  }
+
+  if (isset($_POST['cep'])) {
+    $cep = $_POST['cep'];
+  } else {
+    $cep = NULL;
+  }
+
+  if (isset($_POST['cidade'])) {
+    $cidade = $_POST['cidade'];
+  } else {
+    $cidade = NULL;
+  }
+
+  if (isset($_POST['estado'])) {
+    $estado = $_POST['estado'];
+  } else {
+    $estado = NULL;
+  }
+
+
+  $flag = 0;
+  //Verificando se as senhas digitadas são iguais
+  if ($senha != $confirmasenha) {
 ?>
-  <script>
-    document.getElementById('senha').style.borderColor = "red";
-  </script>
+    <script>
+      document.getElementById('senha').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente
+    $flag = 1;
+  } else {
+  ?>
+    <script>
+      document.getElementById('senha').style.borderColor = "#228B22";
+    </script>
+  <?php
+  }
+
+  if ($nome == null | $nome == '') {
+  ?>
+    <script>
+      document.getElementById('nome').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente
+    $flag = 1;
+  } else {
+  ?>
+    <script>
+      document.getElementById('nome').style.borderColor = "#228B22";
+    </script>
+  <?php
+  }
+
+  if ($cpf == null | $cpf == '') {
+  ?>
+    <script>
+      document.getElementById('cpf').style.borderColor = "red";
+    </script>
+  <?php
+    //setando uma flag para marcar quando algum campo não esta preenchido corretamente
+    $flag = 1;
+  } else {
+  ?>
+    <script>
+      document.getElementById('cpf').style.borderColor = "#228B22";
+    </script>
 <?php
-  //setando uma flag para marcar quando algum campo não esta preenchido corretamente
-  $flag = 1;
-} else {
-?>
-  <script>
-    document.getElementById('senha').style.borderColor = "#228B22";
-  </script>
-<?php
-}
+  }
 
-if ($nome == null | $nome == '') {
-?>
-  <script>
-    document.getElementById('nome').style.borderColor = "red";
-  </script>
-<?php
-  //setando uma flag para marcar quando algum campo não esta preenchido corretamente
-  $flag = 1;
-} else {
-?>
-  <script>
-    document.getElementById('nome').style.borderColor = "#228B22";
-  </script>
-<?php
-}
+  if (!isset($_POST['termos'])) {
+    echo  "<script>alert('Favor ler os Termos de uso!');</script>";
+    return false;
+  }
 
-if ($cpf == null | $cpf == '') {
-?>
-  <script>
-    document.getElementById('cpf').style.borderColor = "red";
-  </script>
-<?php
-  //setando uma flag para marcar quando algum campo não esta preenchido corretamente
-  $flag = 1;
-} else {
-?>
-  <script>
-    document.getElementById('cpf').style.borderColor = "#228B22";
-  </script>
-<?php
-}
-
-if (!isset($_POST['termos'])) {
-  echo  "<script>alert('Favor ler os Termos de uso!');</script>";
-  return false;
-}
-
-//verificando se a flag está preenchida com 1 = houve algum erro de preenchimento do formulário
-if ($flag == 1) {
-  echo  "<script>alert('Favor preencher os campos corretamente!');</script>";
-  return false;
-}
+  //verificando se a flag está preenchida com 1 = houve algum erro de preenchimento do formulário
+  if ($flag == 1) {
+    echo  "<script>alert('Favor preencher os campos corretamente!');</script>";
+    return false;
+  }
 
 
-//INICIO DO ARMAZENAMENTO NO BANCO
-//Verificando se já existe algum usuário no BD com o CPF digitado
-$sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
-// //Rodando a query acima :D
-if ($qr = mysqli_query($conn, $sql)) {
-  $last_id = mysqli_insert_id($conn);
-  $qr_usuarios = mysqli_fetch_array($qr);
-} else {
-  echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
-}
-
-//Caso o usuário ainda não tenha registro no banco, ele será inserido
-if (mysqli_num_rows($qr) == 0) {
-  //Adicionando os registros no banco caso o usuario ainda nao tenha registro
-  $sql = "INSERT INTO usuarios (NOME, CPF, DATANASC, TELEFONE, EMAIL, SENHA, NACIONALIDADE, PROFISSAO, AREA_ATUACAO, NIVEL_GRADUACAO, RUA, NUMERO, COMPLEMENTO, BAIRRO, CEP, ESTADO) 
-  VALUES('$nome', $cpf, '$datanasc', $telefone, '$email', '$senha', '$nacionalidade', '$profissao', '$area_atuacao', '$nivel_graduacao', '$rua', $numero, '$complemento', '$bairro', $cep, '$estado')";
-  exit($sql);
-  //Caso não tenha nenhum usuário já cadastrad com o CPF escolhido, o registro será inserido no BD
+  //INICIO DO ARMAZENAMENTO NO BANCO
+  //Verificando se já existe algum usuário no BD com o CPF digitado
+  $sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
+  // //Rodando a query acima :D
   if ($qr = mysqli_query($conn, $sql)) {
     $last_id = mysqli_insert_id($conn);
     $qr_usuarios = mysqli_fetch_array($qr);
   } else {
     echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
   }
-}
-//Caso o CPF já esteja cadastrado no sistema, o usuário será redirecionado para a Tela de Login
-else {
-  //echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
 
-  header('Location: login.php');
+  //Caso o usuário ainda não tenha registro no banco, ele será inserido
+  if (mysqli_num_rows($qr) == 0) {
+    //Adicionando os registros no banco caso o usuario ainda nao tenha registro
+    $sql = "INSERT INTO usuarios (NOME, CPF, DATANASC, TELEFONE, EMAIL, SENHA, NACIONALIDADE, PROFISSAO, AREA_ATUACAO, NIVEL_GRADUACAO, RUA, NUMERO, COMPLEMENTO, BAIRRO, CEP, ESTADO) 
+  VALUES('$nome', $cpf, '$datanasc', $telefone, '$email', '$senha', '$nacionalidade', '$profissao', '$area_atuacao', '$nivel_graduacao', '$rua', $numero, '$complemento', '$bairro', $cep, '$estado')";
+    //exit($sql);
+    //Caso não tenha nenhum usuário já cadastrad com o CPF escolhido, o registro será inserido no BD
+    if ($qr = mysqli_query($conn, $sql)) {
+      $last_id = mysqli_insert_id($conn);
+      $qr_usuarios = mysqli_fetch_array($qr);
+    } else {
+      echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
+    }
+  }
+  //Caso o CPF já esteja cadastrado no sistema, o usuário será redirecionado para a Tela de Login
+  else {
+    //echo "<script>alert('Este CPF já está cadastrado em nosso sistema, você será redirecionado para a área de Login')</script>";
+
+    header('Location: login.php');
+  }
 }
+
 
 
 ?>
