@@ -139,24 +139,24 @@ if (isset($_POST['cadastrar'])) {
   $cidade = $_POST['cidade'];
   $estado = $_POST['estado'];
 } else {
-  $nome = '';
-  $cpf = '';
-  $datanasc = '';
-  $telefone = '';
-  $email = '';
-  $senha = '';
-  $confirmasenha = '';
-  $nacionalidade = '';
-  $profissao = '';
-  $area_atuacao = '';
-  $nivel_graduacao = '';
-  $rua = '';
-  $numero = '';
-  $complemento = '';
-  $bairro = '';
-  $cep = '';
-  $cidade = '';
-  $estado = '';
+  $nome = NULL;
+  $cpf = NULL;
+  $datanasc = NULL;
+  $telefone = NULL;
+  $email = NULL;
+  $senha = NULL;
+  $confirmasenha = NULL;
+  $nacionalidade = NULL;
+  $profissao = NULL;
+  $area_atuacao = NULL;
+  $nivel_graduacao = NULL;
+  $rua = NULL;
+  $numero = NULL;
+  $complemento = NULL;
+  $bairro = NULL;
+  $cep = NULL;
+  $cidade = NULL;
+  $estado = NULL;
 }
 //INICIO DO ARMAZENAMENTO NO BANCO
 //Verificando se já existe algum usuário no BD com o CPF digitado
