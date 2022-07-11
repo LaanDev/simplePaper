@@ -162,7 +162,6 @@ if (isset($_POST['cadastrar'])) {
 //Verificando se já existe algum usuário no BD com o CPF digitado
 $sql = "SELECT CPF FROM usuarios WHERE CPF = $cpf";
 
-exit($sql);
 //Rodando a query acima :D
 if ($qr = mysqli_query($conn, $sql)) {
   $last_id = mysqli_insert_id($conn);
@@ -171,7 +170,7 @@ if ($qr = mysqli_query($conn, $sql)) {
   echo "Erro: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-exit($senha . $confirmasenha);
+exit($qr_usuarios['CPF']);
 
 //Verificando se as senhas digitadas são iguais
 if ($senha !== $confirmasenha) {
