@@ -121,109 +121,109 @@ include "conexao.php";
 //Verificando se o botão "CADASTRAR" foi clicado
 if (isset($_POST['cadastrar'])) {
 
-  if (isset($_POST['nome'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $nome = $_POST['nome'];
   } else {
     $nome = "NULL";
   }
 
-  if (isset($_POST['cpf'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $cpf = $_POST['cpf'];
   } else {
     $cpf = "NULL";
   }
 
-  if (isset($_POST['datanasc'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $datanasc = $_POST['datanasc'];
   } else {
     $datanasc = "NULL";
   }
 
-  if (isset($_POST['telefone'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $telefone = $_POST['telefone'];
   } else {
     $telefone = "NULL";
   }
 
-  if (isset($_POST['email'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $email = $_POST['email'];
   } else {
     $email = "NULL";
   }
 
-  if (isset($_POST['senha'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $senha = $_POST['senha'];
   } else {
     $senha = "NULL";
   }
 
-  if (isset($_POST['confirmasenha'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $confirmasenha = $_POST['confirmasenha'];
   } else {
     $confirmasenha = "NULL";
   }
 
-  if (isset($_POST['nacionalidade'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $nacionalidade = $_POST['nacionalidade'];
   } else {
     $nacionalidade = "NULL";
   }
 
-  if (isset($_POST['profissao'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $profissao = $_POST['profissao'];
   } else {
     $profissao = "NULL";
   }
 
-  if (isset($_POST['area_atuacao'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $area_atuacao = $_POST['area_atuacao'];
   } else {
     $area_atuacao = "NULL";
   }
 
-  if (isset($_POST['nivel_graduacao'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $nivel_graduacao = $_POST['nivel_graduacao'];
   } else {
     $nivel_graduacao = "NULL";
   }
 
-  if (isset($_POST['rua'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $rua = $_POST['rua'];
   } else {
     $rua = "NULL";
   }
 
-  if (isset($_POST['numero'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $numero = $_POST['numero'];
   } else {
     $numero = "NULL";
   }
 
-  if (isset($_POST['complemento'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $complemento = $_POST['complemento'];
   } else {
     $complemento = "NULL";
   }
 
-  if (isset($_POST['bairro'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $bairro = $_POST['bairro'];
   } else {
     $bairro = "NULL";
   }
 
-  if (isset($_POST['cep'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $cep = $_POST['cep'];
   } else {
     $cep = "NULL";
   }
 
-  if (isset($_POST['cidade'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $cidade = $_POST['cidade'];
   } else {
     $cidade = "NULL";
   }
 
-  if (isset($_POST['estado'])) {
+  if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $estado = $_POST['estado'];
     exit("Nao ta funcionando");
   } else {
