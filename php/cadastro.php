@@ -103,7 +103,7 @@ include "conexao.php";
         <input type="checkbox" name="termos" id="termos">
         <label for="termos" id="termos-label">Eu li e aceito os <a href="termos.php">termos de uso</a></label>
       </div>
-      <input type="submit" id="btn-submit" value="Cadastrar" name="cadastrar">
+      <input type="submit" id="btn-submit" value="Cadastrar" name="cadastrar" onclick="clique()">
 
     </form>
   </div>
@@ -221,7 +221,12 @@ if ($cpf == null | $cpf == '') {
 <?php
 }
 
-//verificando se a 
+if(!isset($_POST['termos']){
+  echo  "<script>alert('Favor ler os termos de uso!');</script>";
+  return false;
+}
+
+//verificando se a flag está preenchida com 1 = houve algum erro de preenchimento do formulário
 if ($flag == 1) {
   echo  "<script>alert('Favor preencher os campos corretamente!');</script>";
   return false;
