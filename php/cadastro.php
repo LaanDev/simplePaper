@@ -225,10 +225,8 @@ if (isset($_POST['cadastrar'])) {
 
   if ($_POST['estado'] != null && $_POST['estado'] != '') {
     $estado = $_POST['estado'];
-    exit("Nao ta funcionando");
   } else {
     $estado = "NULL";
-    exit("Ta funcionando");
   }
 
 
