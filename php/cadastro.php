@@ -221,7 +221,7 @@ if ($cpf == null | $cpf == '') {
 <?php
 }
 
-if(!isset($_POST['termos']){
+if (!isset($_POST['termos'])) {
   echo  "<script>alert('Favor ler os termos de uso!');</script>";
   return false;
 }
